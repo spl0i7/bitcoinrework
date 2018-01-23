@@ -157,7 +157,7 @@ public:
         fMineBlocksOnDemand = false;
 
         consensus.BTCRWForkHeight = 504964;
-        consensus.minerAddress = "1F4xiJWqaybC7YYpcmkSqxWDABEm9JtwFg"
+        consensus.minerAddress = "1F4xiJWqaybC7YYpcmkSqxWDABEm9JtwFg";
 
         checkpointPubKey = CPubKey(ParseHex("034092076ded21159d95bd4e9d486275dfafdc2a06d131e0db42b4e40d19edaa56"));
         checkpointData = (CCheckpointData) {
