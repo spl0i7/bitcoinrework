@@ -66,7 +66,7 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += btcrw
+  bin_PROGRAMS += btcrwd
 endif
 
 if BUILD_BITCOIN_UTILS
