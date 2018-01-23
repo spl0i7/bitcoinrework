@@ -83,6 +83,10 @@ public:
     const CScript GetMinerScriptPubKey() const;
     bool IsBTCRWForkEnabled(const int &height) const {return height >= consensus.BTCRWForkHeight;}
     bool IsBTCRWForkHeight(const int &height) const{return height == consensus.BTCRWForkHeight;}
+    bool ShouldKeepMinDiff(const int &height) const { 
+        // for 600 blocks keep min difficulty
+        return height <= consensus.BTCRWForkHeight + 600;
+    }
 
 protected:
     CChainParams() {}
