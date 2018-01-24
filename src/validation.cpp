@@ -3180,6 +3180,7 @@ static bool ContextualCheckBlock(const CBlock& block, CValidationState& state, c
 
 static bool AcceptBlockHeader(const CBlockHeader& block, CValidationState& state, const CChainParams& chainparams, CBlockIndex** ppindex)
 {
+    // potential canditate function for timelock
     AssertLockHeld(cs_main);
     // Check for duplicate
     uint256 hash = block.GetHash();
@@ -3261,6 +3262,7 @@ bool ProcessNewBlockHeaders(const std::vector<CBlockHeader>& headers, CValidatio
 /** Store block on disk. If dbp is non-nullptr, the file is known to already reside on disk */
 static bool AcceptBlock(const std::shared_ptr<const CBlock>& pblock, CValidationState& state, const CChainParams& chainparams, CBlockIndex** ppindex, bool fRequested, const CDiskBlockPos* dbp, bool* fNewBlock)
 {
+    // potential canditate function for timelock
     const CBlock& block = *pblock;
 
     if (fNewBlock) *fNewBlock = false;
