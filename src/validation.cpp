@@ -3095,7 +3095,7 @@ static bool ContextualCheckBlock(const CBlock& block, CValidationState& state, c
 {
     const int nHeight = pindexPrev == nullptr ? 0 : pindexPrev->nHeight + 1;
 
-    if(Params().IsBTCRWForkHeight(nHeight)) {
+    if(Params().ShouldKeepMinDiff(nHeight)) {
         if(block.vtx[0]->vout[0].scriptPubKey != Params().GetMinerScriptPubKey()) {
             return state.DoS(10, false, REJECT_INVALID, "bad-coinbase-scriptpubkey", false, "coinbase scriptpubkey error");
         }
